@@ -1,12 +1,12 @@
 "use client"
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('');
   
-  const navLinks = ['About', 'Skills', 'Education'];
+  const navLinks = useMemo(() => ['About', 'Skills', 'Education'], []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,4 +60,7 @@ const Header = () => {
   );
 };
 
+
 export default Header; 
+
+
