@@ -7,36 +7,41 @@ const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "TypeScript", level: 80 },
+        { name: "React", level: 80 },
+        { name: "Next.js", level: 80 },
+        { name: "Angular", level: 80 },
+        { name: "TypeScript", level: 90 },
         { name: "Tailwind CSS", level: 90 },
       ]
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 85 },
+        { name: "Node.js", level: 90 },
+        { name: "Nest", level: 80 },
         { name: "Express", level: 80 },
-        { name: "MongoDB", level: 75 },
-        { name: "PostgreSQL", level: 70 },
+     
+
       ]
     },
     {
-      title: "Outils",
+      title: "Database",
       skills: [
-        { name: "Git", level: 85 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 65 },
-        { name: "CI/CD", level: 75 },
+        { name: "MongoDB", level: 75 },
+        { name: "PostgreSQL", level: 70 }, 
+        { name: "MySQL", level: 70 },
       ]
-    }
+    },
+
+
+
+    
   ];
 
   return (
     <section id="skills" className="min-h-screen bg-white py-32">
       <div className="max-w-7xl mx-auto px-6">
-µ        <motion.div 
+      <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}

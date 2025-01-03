@@ -27,7 +27,7 @@ const Header = () => {
   }, [navLinks]);
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white border-b-[3px] border-black">
+    <header className="fixed w-full top-0 z-50 bg-white border-b-[3px] border-black" >
       <nav className="flex items-center justify-between px-6 max-w-7xl mx-auto">
         <div className="py-8">
           <Link href="/" className="text-xl font-bold tracking-widest hover:opacity-70 transition-opacity">
