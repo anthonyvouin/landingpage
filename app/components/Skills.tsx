@@ -33,8 +33,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="min-h-screen bg-white pt-40 border-t-[3px]">
-
+    <section id="skills" className="min-h-screen bg-white pt-40 pb-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
@@ -53,12 +52,9 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {skillCategories.map((category, index) => (
-            <motion.div
+            <div
               key={category.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="border-[3px] border-black p-4 sm:p-6 group hover:bg-black hover:text-white transition-colors duration-500"
+              className="border-[3px] border-black p-4 sm:p-6"
             >
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 uppercase tracking-wider">
                 {category.title}
@@ -67,21 +63,23 @@ const Skills = () => {
                 {category.skills.map((skill) => (
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm uppercase tracking-wider">{skill.name}</span>
-                      <span className="text-sm font-medium">{skill.level}%</span>
+                      <span className="text-sm uppercase tracking-wider">
+                        {skill.name}
+                      </span>
+                      <span className="text-sm font-medium">
+                        {skill.level}%
+                      </span>
                     </div>
-                    <div className="h-[3px] bg-gray-200 group-hover:bg-gray-700">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="h-full bg-black group-hover:bg-white"
+                    <div className="h-[3px] bg-gray-200">
+                      <div 
+                        className="h-full bg-black"
+                        style={{ width: `${skill.level}%` }}
                       />
                     </div>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

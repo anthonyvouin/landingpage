@@ -6,7 +6,7 @@ import { useEffect, useState, useMemo } from 'react';
 const Header = () => {
   const [activeSection, setActiveSection] = useState('');
   
-  const navLinks = useMemo(() => ['About', 'Skills', 'Education'], []);
+  const navLinks = useMemo(() => ['About', 'Skills', 'Education', 'Contact'], []);
 
   useEffect(() => {
     const handleScroll = () => {

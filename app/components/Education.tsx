@@ -18,10 +18,11 @@ const Education = () => {
       school: "Normandie Web School",
       skills: ["Web Development", "Development Full Stack", "System Architecture"]
     },
+   
   ];
 
   return (
-    <section id="education" className="min-h-screen bg-white pt-40  ">
+    <section id="education" className="min-h-screen bg-white ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
@@ -45,9 +46,9 @@ const Education = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="border-[3px] border-black p-6 sm:p-8 group hover:bg-black hover:text-white transition-colors duration-500"
+              className="border-[3px] border-black p-6 sm:p-8"
             >
-              <span className="text-sm uppercase tracking-wider text-gray-500 group-hover:text-gray-300">
+              <span className="text-sm uppercase tracking-wider text-gray-500">
                 {education.period}
               </span>
               <h3 className="text-xl sm:text-2xl font-bold mt-2 mb-3 uppercase tracking-wider">
@@ -69,7 +70,16 @@ const Education = () => {
           ))}
         </div>
 
-
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mt-16 sm:mt-24 text-center border-t-[3px] border-b-[3px] border-black py-8 sm:py-12"
+        >
+          <p className="text-xl sm:text-2xl font-light italic px-4">
+            "Education is not preparation for life; education is life itself"
+          </p>
+        </motion.div>
       </div>
     </section>
   );
