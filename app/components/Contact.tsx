@@ -7,44 +7,29 @@ const Contact = () => {
   const contacts = [
     {
       id: 1,
-      title: "Email & Phone",
+      title: "EMAIL & PHONE",
       items: [
         {
           icon: <FaEnvelope className="text-2xl" />,
-          label: "Email",
-          value: "anthony.vouin@outlook.fr",
+          label: "EMAIL",
+          value: "anthony.vouin@outlook.fr"
         },
         {
           icon: <FaPhone className="text-2xl" />,
-          label: "Phone",
-          value: "+33 6 60 05 38 88",
+          label: "PHONE",
+          value: "+33 6 60 05 38 88"
         }
       ]
     },
-    {
-      id: 2,
-      title: "Social & Code",
-      items: [
-        {
-          icon: <FaLinkedin className="text-2xl" />,
-          label: "LinkedIn",
-          value: "view profil",
-        },
-        {
-          icon: <FaGithub className="text-2xl" />,
-          label: "GitHub",
-          value: "view",
-        }
-      ]
-    },
+    
     {
       id: 3,
-      title: "Location",
+      title: "LOCATION",
       items: [
         {
           icon: <FaMapMarkerAlt className="text-2xl" />,
-          label: "Based in",
-          value: "Rouen, France",
+          label: "BASED IN",
+          value: "Rouen, France"
         }
       ]
     }
@@ -82,20 +67,17 @@ const Contact = () => {
               </h3>
               <div className="space-y-6">
                 {category.items.map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex items-start gap-4 group"
-                  >
+                  <div key={item.label} className="flex items-start gap-4">
                     <div className="p-3 border-2 border-black">
                       {item.icon}
                     </div>
-                    <div>
-                      <p className="text-sm uppercase tracking-wider text-gray-500">
+                    <div className="flex flex-col">
+                      <span className="text-sm uppercase tracking-wider text-gray-500">
                         {item.label}
-                      </p>
-                      <p className="text-lg font-medium mt-1">
+                      </span>
+                      <span className="text-lg font-medium">
                         {item.value}
-                      </p>
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -103,8 +85,6 @@ const Contact = () => {
             </motion.div>
           ))}
         </div>
-
-    
       </div>
     </section>
   );
