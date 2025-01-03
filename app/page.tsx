@@ -8,7 +8,7 @@ import Projects from './components/Projects';
 
 export default function Home() {
   return (
-    <main className="bg-white">
+    <main className="bg-white border-[5px] border-black">
       <Header />
       <About />
       <Education />

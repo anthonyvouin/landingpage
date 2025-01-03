@@ -17,3 +17,6 @@
   animation: marquee-left 30s linear infinite;
 }
 
+.calculHeader {
+  width: calc(100% - 10px);
+}

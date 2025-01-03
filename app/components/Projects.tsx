@@ -8,16 +8,24 @@ const Projects = () => {
   const projects = [
     {
       title: "NextJS Portfolio",
-      description: "Modern portfolio developed with Next.js 14, Tailwind CSS and Framer Motion. Includes smooth animations and responsive design.",
+      description: "Modern portfolio developed with Next.js 15, Tailwind CSS and Framer Motion. Includes smooth animations and responsive design.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
       image: "/avatar.webp",
       github: "https://github.com/anthonyvouin/landingpage",
       site: "https://anthony-vouin.com"
     },
+    {
+      title: "Marketplace",
+      description: "E-commerce platform for grocery delivery, developed with Next.js, Tailwind CSS and Stripe integration. Offers a smooth user experience with a responsive interface and engaging animations.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Prime","Postgres"],
+      image: "/avatar.webp",
+      github: "https://github.com/anthonyvouin/MarketPlaceFood",
+      site: ""
+    },
   ];
 
   return (
-    <section id="projects" className="min-h-screen bg-white">
+    <section id="projects" className=" mb-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
@@ -27,6 +35,9 @@ const Projects = () => {
         >
           <div className="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full" />
           <h2 className="text-7xl font-black uppercase tracking-tighter">Projects</h2>
+          <p className="text-lg sm:text-xl font-light text-gray-600 tracking-wide">
+            My Projects
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -84,8 +95,23 @@ const Projects = () => {
                 </div>
               </div>
             </motion.div>
+            
+
+
+
           ))}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mt-16 sm:mt-24 text-center border-t-[3px] border-b-[3px] border-black py-8 sm:py-12"
+        >
+          <p className="text-xl sm:text-2xl font-light italic px-4">
+            "Each project is a new story to tell, a new challenge to take on"
+          </p>
+        </motion.div>
       </div>
     </section>
   );

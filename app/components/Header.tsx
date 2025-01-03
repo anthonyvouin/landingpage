@@ -6,7 +6,7 @@ import { useEffect, useState, useMemo } from 'react';
 const Header = () => {
   const [activeSection, setActiveSection] = useState('');
   
-  const navLinks = useMemo(() => ['About', 'Skills', 'Education', 'Contact'], []);
+  const navLinks = useMemo(() => ['About', 'Education', 'Skills', 'Projects', 'Contact'], []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,8 +27,8 @@ const Header = () => {
   }, [navLinks]);
 
   return (
-    <header className="fixed w-full top-0 z-50">
-      <div className="bg-white border-t-[5px] border-b-[5px] border-l-[5px] border-r-[5px] border-black">
+    <header  className="calculHeader  fixed border-t-[5px] border-b-[5px] border-black top-0 z-50">
+      <div className="bg-white ">
         <nav className="flex items-center justify-between px-6 max-w-7xl mx-auto">
           <div className="py-8">
             <Link href="/" className="text-xl font-bold tracking-widest hover:opacity-70 transition-opacity">

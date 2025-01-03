@@ -22,7 +22,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="min-h-screen bg-white mt-40">
+    <section id="education" className="mb-20 bg-white  mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
