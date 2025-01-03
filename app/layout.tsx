@@ -24,10 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="">
-          <div className="fixed inset-0 border-[5px] border-black" />
-          
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <div className="fixed inset-0 border-[5px] border-black pointer-events-none z-50" />
+          <div className="relative z-10">
             {children}
+          </div>
       </body>
     </html>
   );
