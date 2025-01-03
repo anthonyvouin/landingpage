@@ -20,8 +20,6 @@ const Skills = () => {
         { name: "Node.js", level: 90 },
         { name: "Nest", level: 80 },
         { name: "Express", level: 80 },
-     
-
       ]
     },
     {
@@ -32,43 +30,40 @@ const Skills = () => {
         { name: "MySQL", level: 70 },
       ]
     },
-
-
-
-    
   ];
 
   return (
-    <section id="skills" className="min-h-screen bg-white py-32">
-      <div className="max-w-7xl mx-auto px-6">
-      <motion.div 
+    <section id="skills" className="min-h-screen bg-white pt-40 border-t-[3px]">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="border-l-[6px] border-black pl-6 relative mb-16"
+          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16"
         >
           <div className="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full" />
-          <h2 className="text-7xl font-black uppercase tracking-tighter mb-4">
+          <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter mb-4">
             Skills
           </h2>
-          <p className="text-xl font-light text-gray-600 tracking-wide">
+          <p className="text-lg sm:text-xl font-light text-gray-600 tracking-wide">
             Technologies & Outils
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="border-[3px] border-black p-6 group hover:bg-black hover:text-white transition-colors duration-500"
+              className="border-[3px] border-black p-4 sm:p-6 group hover:bg-black hover:text-white transition-colors duration-500"
             >
-              <h3 className="text-2xl font-bold mb-6 uppercase tracking-wider">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 uppercase tracking-wider">
                 {category.title}
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {category.skills.map((skill) => (
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between items-center">
@@ -90,15 +85,14 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Citation ou message */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mt-24 text-center border-t-[3px] border-b-[3px] border-black py-12"
+          className="mt-16 sm:mt-24 text-center border-t-[3px] border-b-[3px] border-black py-8 sm:py-12"
         >
-          <p className="text-2xl font-light italic">
-            "La maîtrise technique est la base de la créativité"
+          <p className="text-xl sm:text-2xl font-light italic px-4">
+            "Technical mastery is the basis of creativity"
           </p>
         </motion.div>
       </div>

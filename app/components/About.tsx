@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen bg-white pt-32 border-t-[3px] border-black">
+    <section id="about" className="min-h-screen bg-white pt-40 border-t-[3px] border-black">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
         
         <motion.div 
@@ -26,10 +26,9 @@ const About = () => {
 
           <div className="space-y-6 pr-12">
             <p className="text-lg leading-relaxed">
-              Passionné par la création d'expériences web innovantes, je combine créativité et expertise technique pour donner vie à des projets ambitieux.
-            </p>
+            Passionate about creating innovative web experiences, I combine creativity and technical expertise to bring ambitious projects to life.            </p>
             <p className="text-lg leading-relaxed">
-              Spécialisé en React, Next.js et Node.js, je construis des applications web performantes et élégantes.
+            Specialized in React, Next.js and Node.js, I build powerful and elegant web applications.
             </p>
           </div>
 
@@ -40,8 +39,8 @@ const About = () => {
             className="grid grid-cols-3 gap-8 py-8 border-t-[3px] border-b-[3px] border-black"
           >
             {[
-              { number: '3+', label: 'Années d\'exp.' },
-              { number: '50+', label: 'Projets' },
+              { number: '5+', label: 'Years of experience' },
+              { number: '50+', label: 'Projects' },
               { number: '15+', label: 'Clients' }
             ].map((stat, index) => (
               <motion.div 
