@@ -20,7 +20,7 @@ const About = () => {
               About
             </h2>
             <p className="text-xl font-light text-gray-600 tracking-wide">
-              Développeur Full Stack
+            Full Stack Developer
             </p>
           </div>
 

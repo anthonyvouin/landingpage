@@ -3,8 +3,9 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Projects from './components/Projects';
+  import Footer from './components/Footer';
+  import Projects from './components/Projects';
+  import Experiences from './components/Experiences';
 
 export default function Home() {
   return (
@@ -13,8 +14,10 @@ export default function Home() {
       <About />
       <Education />
 
+
       <Skills />
       <Projects />
+      <Experiences />
 
       <Contact />
       <Footer />
