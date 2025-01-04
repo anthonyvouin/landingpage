@@ -10,7 +10,7 @@ const Projects = () => {
       title: "NextJS Portfolio",
       description: "Modern portfolio developed with Next.js 15, Tailwind CSS and Framer Motion. Includes smooth animations and responsive design.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-      image: "/avatar.webp",
+      image: "/code.jpg",
       github: "https://github.com/anthonyvouin/landingpage",
       site: "https://anthony-vouin.com"
     },
@@ -18,7 +18,7 @@ const Projects = () => {
       title: "Marketplace",
       description: "E-commerce platform for grocery delivery, developed with Next.js, Tailwind CSS and Stripe integration. Offers a smooth user experience with a responsive interface and engaging animations.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Prime","Postgres"],
-      image: "/avatar.webp",
+      image: "/code.jpg",
       github: "https://github.com/anthonyvouin/MarketPlaceFood",
       site: ""
     },

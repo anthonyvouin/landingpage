@@ -13,11 +13,11 @@ export default function Home() {
       <Header />
       <About />
       <Education />
+      <Experiences />
 
 
       <Skills />
       <Projects />
-      <Experiences />
 
       <Contact />
       <Footer />
