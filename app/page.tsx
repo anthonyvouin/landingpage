@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 
 export default function Home() {
   return (
+    
     <main className="bg-white border-[5px] border-black">
       <Header />
       <About />
