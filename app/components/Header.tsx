@@ -29,9 +29,9 @@ const Header = () => {
   }, [navLinks]);
 
   return (
-    <header className="calculHeader fixed border-t-[5px] border-b-[5px] border-black top-0 z-50">
+    <header className="calculHeader fixed w-full border-t-[5px] border-b-[5px] border-black top-0 z-50">
       <div className="bg-white">
-        <nav className="flex items-center justify-between px-6 max-w-7xl mx-auto">
+        <nav className="flex items-center justify-between px-4 sm:px-6 max-w-7xl mx-auto">
           <div className="py-8">
             <Link href="/" className="text-xl font-bold tracking-widest hover:opacity-70 transition-opacity">
               Anthony Vouin

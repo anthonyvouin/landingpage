@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 
-
 @keyframes marquee-left {
   0% {
     transform: translateX(0);
