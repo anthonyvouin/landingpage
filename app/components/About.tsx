@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen bg-white pt-40 border-t-[3px] border-black">
+    <section id="about" className="min-h-screen bg-white pt-40 border-t-[3px] border-black mb-20">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
         
         <motion.div 
