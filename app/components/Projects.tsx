@@ -21,6 +21,13 @@ const Projects = () => {
       image: "/code.jpg",
       github: "https://github.com/anthonyvouin/MarketPlaceFood",
       site: ""
+    },    {
+      title: "Quiz app",
+      description: "Quiz application developed for freelancer Anna Girard, designed to raise cybersecurity awareness among her clients. Interactive and engaging interface to test and improve knowledge of IT security best practices.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      image: "/code.jpg",
+      github: "https://github.com/anthonyvouin/quizz",
+      site: ""
     },
   ];
 
