@@ -8,12 +8,33 @@ const Header = () => {
   const [hoveredItem, setHoveredItem] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  const navLinks = useMemo(() => ['About', 'Education', 'Experiences', 'Skills', 'Projects', 'Contact'], []);
+  const navLinksMapping = useMemo(() => [
+    { text: 'À propos', id: 'about' },
+    { text: 'Formations', id: 'education' },
+    { text: 'Expériences', id: 'experiences' },
+    { text: 'Compétences', id: 'skills' },
+    { text: 'Projets', id: 'projects' },
+    { text: 'Contact', id: 'contact' }
+  ], []);
 
   useEffect(() => {
+    const updateScrollPadding = () => {
+      if (window.innerWidth < 768) {
+        document.documentElement.style.scrollPaddingTop = '80px';
+      } else if (window.innerWidth < 1024) {
+        document.documentElement.style.scrollPaddingTop = '100px';
+      } else {
+        document.documentElement.style.scrollPaddingTop = '120px';
+      }
+    };
+
+    updateScrollPadding();
+
+    window.addEventListener('resize', updateScrollPadding);
+
     const handleScroll = () => {
-      const visibleSection = navLinks.map(item => item.toLowerCase()).find(section => {
-        const element = document.getElementById(section);
+      const visibleSection = navLinksMapping.find(link => {
+        const element = document.getElementById(link.id);
         if (element) {
           const rect = element.getBoundingClientRect();
           return rect.top <= 150 && rect.bottom >= 150;
@@ -21,12 +42,17 @@ const Header = () => {
         return false;
       });
 
-      setActiveSection(visibleSection || '');
+      setActiveSection(visibleSection ? visibleSection.id : '');
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [navLinks]);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateScrollPadding);
+      document.documentElement.style.scrollPaddingTop = '';
+    };
+  }, [navLinksMapping]);
 
   return (
     <header className="calculHeader fixed w-full border-t-[5px] border-b-[5px] border-black top-0 z-50">
@@ -57,22 +83,22 @@ const Header = () => {
             md:block
           `}>
             <ul className="flex flex-col md:flex-row md:space-x-8 px-6 py-4 md:p-0">
-              {navLinks.map((item) => (
-                <li key={item} className="py-2 md:py-0">
+              {navLinksMapping.map((item) => (
+                <li key={item.text} className="py-2 md:py-0">
                   <Link 
-                    href={`#${item.toLowerCase()}`}
+                    href={`#${item.id}`}
                     onClick={() => setIsMenuOpen(false)}
-                    onMouseEnter={() => setHoveredItem(item.toLowerCase())}
+                    onMouseEnter={() => setHoveredItem(item.id)}
                     onMouseLeave={() => setHoveredItem('')}
                     className="text-sm font-medium tracking-widest uppercase relative group block"
                   >
                     <span className={`transition-colors ${
-                      activeSection === item.toLowerCase() && !hoveredItem ? 'text-black' : 'text-gray-600'
+                      activeSection === item.id && !hoveredItem ? 'text-black' : 'text-gray-600'
                     }`}>
-                      {item}
+                      {item.text}
                     </span>
                     <span className={`absolute -bottom-[1.5px] left-0 h-[3px] bg-black transition-all duration-300 ${
-                      (hoveredItem === item.toLowerCase() || (activeSection === item.toLowerCase() && !hoveredItem)) 
+                      (hoveredItem === item.id || (activeSection === item.id && !hoveredItem)) 
                         ? 'w-full' 
                         : 'w-0'
                     }`}>

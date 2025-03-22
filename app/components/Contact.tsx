@@ -20,7 +20,7 @@ const Contact = () => {
   const contacts: ContactCategory[] = [
     {
       id: 1,
-      title: "EMAIL & PHONE",
+      title: "EMAIL & TÉLÉPHONE",
       items: [
         {
           icon: <FaEnvelope className="text-2xl" />,
@@ -30,7 +30,7 @@ const Contact = () => {
         },
         {
           icon: <FaPhone className="text-2xl" />,
-          label: "PHONE",
+          label: "TÉLÉPHONE",
           value: "+33 6 60 05 38 88",
           link: "tel:+33660053888"
 
@@ -39,18 +39,18 @@ const Contact = () => {
     },
     {
       id: 2,
-      title: "SOCIAL MEDIA",
+      title: "RÉSEAUX SOCIAUX",
       items: [
         {
           icon: <FaLinkedin className="text-2xl" />,
           label: "LINKEDIN",
-          value: "view profile",
+          value: "Voir le profil",
           link: "https://www.linkedin.com/in/anthony-vouin-b742a91ba/"
         },
         {
           icon: <FaGithub className="text-2xl" />,
           label: "GITHUB",
-          value: "view projects",
+          value: "Voir les projets",
           link: "https://github.com/anthonyvouin"
         }
       ]
@@ -61,7 +61,7 @@ const Contact = () => {
       items: [
         {
           icon: <FaMapMarkerAlt className="text-2xl" />,
-          label: "BASED IN",
+          label: "LOCALISATION",
           value: "Rouen, France"
         }
       ]
@@ -75,14 +75,14 @@ const Contact = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16"
+          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16 mt-3"
         >
-          <div className="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full" />
+          <div className="absolute -left-3 -top-3 w-6 h-6 bg-black rounded-full" />
           <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter mb-4">
             Contact
           </h2>
           <p className="text-lg sm:text-xl font-light text-gray-600 tracking-wide">
-            Let's Connect & Create
+          Connectons-nous et créons ensemble.
           </p>
         </motion.div>
 
@@ -136,7 +136,7 @@ const Contact = () => {
           className="mt-16 sm:mt-24 text-center border-t-[3px] border-b-[3px] border-black py-8 sm:py-12"
         >
           <p className="text-xl sm:text-2xl font-light italic px-4">
-            "Together, let's build the digital future"
+            "Ensemble, construisons le futur numérique"
           </p>
         </motion.div>
       </div>

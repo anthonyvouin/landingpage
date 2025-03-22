@@ -18,7 +18,7 @@ const Footer = () => {
             Anthony Vouin
           </h3>
           <p className="text-sm text-gray-600">
-            © {currentYear} All rights reserved.
+            © {currentYear} Tous droits réservés.
           </p>
         </motion.div>
       </div>

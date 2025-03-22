@@ -4,25 +4,43 @@ import { motion } from 'framer-motion';
 
 const Experiences = () => {
   const experiences = [
- 
     {
-      id: 2,
-      period: "2022 - 2023",
-      title: "educational speaker",
-      company: "Normandie Web School",
-      location: "Rouen, France",
-      description: "PHP, JavaScript, and MySQL courses offered during the first year of school.",
+      id: 1,
+      period: "MARS 2025 - OCTOBRE 2025",
+      title: "Développeur Full Stack",
+      company: "IRESTORE",
+      location: "Télétravail",
+      description: "Développement d'un front-end en Next.js, d'une API en Nest.js et d'une application mobile en React Native.",
       skills: ["Php", "JavaScript", "MySQL"]
     },
     {
+      id: 2,
+      period: "Janvier 2025 - MARS 2025",
+      title: "Développeur Full Stack",
+      company: "Anna Giraud",
+      location: "Télétravail",
+      description: "Développement d'un site web pour la société Anna Giraud.",
+      skills: ["Next.js", "Typescript", "PostgreSQL"]
+    } 
+    ,{
       id: 3,
+      period: "2022 - 2023",
+      title: "Intervenant pédagogique",
+      company: "Normandie Web School",
+      location: "Rouen, France",
+      description: "Cours de PHP, JavaScript et MySQL destinés aux étudiants de la première année de l'école.",
+      skills: ["Php", "JavaScript", "MySQL"]
+    },
+    {
+      id: 4,
       period: "2021 - 2023",
-      title: "Full Stack Developer",
+      title: "Développeur Full Stack",
       company: "Regional Gymnastics Committee",
       location: "Rouen, France",
-      description: "Creation of websites for the Regional Gymnastics Committee",
+      description: "Création de sites web pour le Comité Régional de Gymnastique.",
       skills: ["Symfony", "JavaScript", "MySQL", "REST API"]
-    }
+    },
+ 
   ];
 
   return (
@@ -32,11 +50,11 @@ const Experiences = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16"
+          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16 mt-3"
         >
-          <div className="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full" />
+          <div className="absolute -left-3 -top-3 w-6 h-6 bg-black rounded-full" />
           <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter mb-4">
-            Expériences
+            Experiences
           </h2>
           <p className="text-lg sm:text-xl font-light text-gray-600 tracking-wide">
             Parcours Professionnel

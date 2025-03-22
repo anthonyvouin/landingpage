@@ -7,16 +7,16 @@ const Education = () => {
     {
       id: 1,
       period: "2023 - 2025",
-      title: "Master's Lead Dev Full Stack bac + 5",
+      title: "Mastère Tech Lead Full Stack bac + 5",
       school: "EEMI Paris",
-      skills: ["Full Stack", "Dev ops", "Cybersecurity"]
+      skills: ["Full Stack", "Dev ops", "Cybersecurity", "Gestion de projet"]
     },
     {
       id: 2,
       period: "2020 - 2023",
-      title: "bachelor web and mobile development bac + 3",
+      title: "Bachelor développeur full stack web et mobile bac + 3",
       school: "Normandie Web School",
-      skills: ["Web Development", "Development Full Stack", "System Architecture"]
+      skills: ["Développement web", "Développement Full Stack", "Développement mobile"]
     },
    
   ];
@@ -28,14 +28,14 @@ const Education = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16"
+          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16 mt-3"
         >
-          <div className="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full" />
+          <div className="absolute -left-3 -top-3 w-6 h-6 bg-black rounded-full" />
           <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter mb-4">
-            Education
+            Formations
           </h2>
           <p className="text-lg sm:text-xl font-light text-gray-600 tracking-wide">
-            Academic Background & Achievements
+            Parcours académique 
           </p>
         </motion.div>
 
@@ -77,7 +77,7 @@ const Education = () => {
           className="mt-16 sm:mt-24 text-center border-t-[3px] border-b-[3px] border-black py-8 sm:py-12"
         >
           <p className="text-xl sm:text-2xl font-light italic px-4">
-            "Education is not preparation for life; education is life itself"
+            "L'éducation n'est pas une préparation à la vie ; l'éducation est la vie elle-même"
           </p>
         </motion.div>
       </div>

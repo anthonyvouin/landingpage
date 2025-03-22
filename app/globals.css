@@ -19,3 +19,22 @@
 .calculHeader {
   width: calc(100% - 10px);
 }
+
+html {
+  /* Valeur par défaut pour mobile */
+  scroll-padding-top: 80px;
+}
+
+/* Ajustement pour les tablettes */
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 100px;
+  }
+}
+
+/* Ajustement pour les grands écrans */
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 120px;
+  }
+}

@@ -7,23 +7,24 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 const Projects = () => {
   const projects = [
     {
-      title: "NextJS Portfolio",
-      description: "Modern portfolio developed with Next.js 15, Tailwind CSS and Framer Motion. Includes smooth animations and responsive design.",
+      title: "Portfolio NextJS",
+      description: "Portfolio moderne développé avec Next.js 15, Tailwind CSS et Framer Motion. Inclut une expérience utilisateur fluide et un design responsive.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
       image: "/code.jpg",
       github: "https://github.com/anthonyvouin/landingpage",
       site: "https://anthony-vouin.com"
     },
     {
-      title: "Marketplace",
-      description: "E-commerce platform for grocery delivery, developed with Next.js, Tailwind CSS and Stripe integration. Offers a smooth user experience with a responsive interface and engaging animations.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Prime","Postgres"],
+      title: "Snap&Shop",
+      description: "C'est une plateforme de livraison de produits de consommation courante développée avec Next.js, PostgreSQL, Tailwind CSS et PrimeReact pour les composants. L'intégration de Stripe et de ses webhooks permet une gestion fluide des paiements. Une partie DevOps est également incluse pour le déploiement et l'automatisation. Ce projet, réalisé dans un cadre scolaire, intègre aussi de l'intelligence artificielle pour recommander des produits aux utilisateurs, améliorant ainsi l'expérience d'achat. Le design est responsive, moderne et agrémenté d'animations engageantes pour une navigation optimale.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PrimeReact", "Postgres"],
       image: "/code.jpg",
       github: "https://github.com/anthonyvouin/MarketPlaceFood",
       site: ""
-    },    {
-      title: "Quiz app",
-      description: "Quiz application developed for freelancer Anna Girard, designed to raise cybersecurity awareness among her clients. Interactive and engaging interface to test and improve knowledge of IT security best practices.",
+    }, 
+    {
+        title: "Quiz app",
+        description: "Quiz application développée pour une freelancer Anna Girard, conçue pour sensibiliser aux bonnes pratiques de cybersécurité parmi ses clients. Interface interactive et engageante pour tester et améliorer les connaissances sur les bonnes pratiques de cybersécurité.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
       image: "/code.jpg",
       github: "https://github.com/anthonyvouin/quiz",
@@ -37,13 +38,15 @@ const Projects = () => {
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="border-l-[6px] border-black pl-6 relative mb-16"
+          transition={{ duration: 0.8 }}
+          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16 mt-3"
         >
-          <div className="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full" />
-          <h2 className="text-7xl font-black uppercase tracking-tighter">Projects</h2>
+          <div className="absolute -left-3 -top-3 w-6 h-6 bg-black rounded-full" />
+          <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter mb-4">
+            Projets
+          </h2>
           <p className="text-lg sm:text-xl font-light text-gray-600 tracking-wide">
-            My Projects
+            Mes projets
           </p>
         </motion.div>
 
@@ -116,7 +119,7 @@ const Projects = () => {
           className="mt-16 sm:mt-24 text-center border-t-[3px] border-b-[3px] border-black py-8 sm:py-12"
         >
           <p className="text-xl sm:text-2xl font-light italic px-4">
-            "Each project is a new story to tell, a new challenge to take on"
+            "Chaque projet est une nouvelle histoire à raconter, un nouveau défi à relever"
           </p>
         </motion.div>
       </div>

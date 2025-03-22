@@ -30,6 +30,16 @@ const Skills = () => {
         { name: "MySQL", level: 70 },
       ]
     },
+    {
+      title: "DevOps",
+      skills: [
+        { name: "Docker", level: 75 },
+        { name: "Ansible", level: 75 },
+        { name: "Kubernetes", level: 70 }, 
+        { name: "CI/CD", level: 70 },
+
+      ]
+    },
   ];
 
   return (
@@ -39,11 +49,11 @@ const Skills = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16"
+          className="border-l-[6px] border-black pl-6 relative mb-12 sm:mb-16 mt-3"
         >
-          <div className="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full" />
+          <div className="absolute -left-3 -top-3 w-6 h-6 bg-black rounded-full" />
           <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter mb-4">
-            Skills
+            Compétences
           </h2>
           <p className="text-lg sm:text-xl font-light text-gray-600 tracking-wide">
             Technologies & Outils
@@ -90,7 +100,7 @@ const Skills = () => {
           className="mt-16 sm:mt-24 text-center border-t-[3px] border-b-[3px] border-black py-8 sm:py-12"
         >
           <p className="text-xl sm:text-2xl font-light italic px-4">
-            "Technical mastery is the basis of creativity"
+            "La maîtrise technique est la base de la créativité"
           </p>
         </motion.div>
       </div>

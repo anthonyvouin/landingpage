@@ -14,22 +14,24 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <div className="border-l-[6px] border-black pl-6 relative">
-            <div className="absolute -left-3 top-0 w-6 h-6 bg-black rounded-full"></div>
+          <div className="border-l-[6px] border-black pl-6 relative mt-3">
+            <div className="absolute -left-3 -top-3 w-6 h-6 bg-black rounded-full"></div>
             <h2 className="text-7xl font-black uppercase tracking-tighter mb-4">
               About
             </h2>
             <p className="text-xl font-light text-gray-600 tracking-wide">
-            Full Stack Developer
+              Full Stack Developer
             </p>
           </div>
 
           <div className="space-y-6 pr-12">
             <p className="text-lg leading-relaxed">
-            Passionate about creating innovative web experiences, I combine creativity and technical expertise to bring ambitious projects to life.            </p>
-            <p className="text-lg leading-relaxed">
-            Specialized in React, Next.js and Node.js, I build powerful and elegant web applications.
+            Passionné par la création d'expériences web innovantes, je combine créativité et expertise technique pour donner vie à des projets ambitieux.
             </p>
+            <p className="text-lg leading-relaxed">
+            Spécialisé en Next.js et Nest.js, je crée des applications web performantes et élégantes.
+            </p>
+
           </div>
 
           <motion.div 
@@ -39,10 +41,9 @@ const About = () => {
             className="grid grid-cols-3 gap-8 py-8 border-t-[3px] border-b-[3px] border-black"
           >
             {[
-              { number: '5+', label: 'Years of experience' },
-              { number: '50+', label: 'Projects' },
-              { number: '15+', label: 'Clients' }
-            ].map((stat, index) => (
+              { number: '3', label: 'Années d\'expérience' },
+              { number: '50+', label: 'Projets' },
+              ].map((stat, index) => (
               <motion.div 
                 key={index}
                 whileHover={{ scale: 1.05 }}
