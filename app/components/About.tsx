@@ -17,10 +17,10 @@ const About = () => {
           <div className="border-l-[6px] border-black pl-6 relative mt-3">
             <div className="absolute -left-3 -top-3 w-6 h-6 bg-black rounded-full"></div>
             <h2 className="text-7xl font-black uppercase tracking-tighter mb-4">
-              About
+            À propos
             </h2>
             <p className="text-xl font-light text-gray-600 tracking-wide">
-              Full Stack Developer
+              Développeur Full Stack
             </p>
           </div>
 

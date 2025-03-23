@@ -54,7 +54,7 @@ const Experiences = () => {
         >
           <div className="absolute -left-3 -top-3 w-6 h-6 bg-black rounded-full" />
           <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter mb-4">
-            Experiences
+            Expériences
           </h2>
           <p className="text-lg sm:text-xl font-light text-gray-600 tracking-wide">
             Parcours Professionnel
