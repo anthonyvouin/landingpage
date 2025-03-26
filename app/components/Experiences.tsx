@@ -7,7 +7,7 @@ const Experiences = () => {
     {
       id: 1,
       period: "MARS 2025 - OCTOBRE 2025",
-      title: "Développeur Full Stack",
+      title: "Développeur Full Stack web et mobile",
       company: "IRESTORE",
       location: "Télétravail",
       description: "Développement d'un front-end en Next.js, d'une API en Nest.js et d'une application mobile en React Native.",
@@ -16,7 +16,7 @@ const Experiences = () => {
     {
       id: 2,
       period: "Janvier 2025 - MARS 2025",
-      title: "Développeur Full Stack",
+      title: "Développeur Full Stack web",
       company: "Anna Giraud",
       location: "Télétravail",
       description: "Développement d'un site web pour la société Anna Giraud.",
@@ -34,7 +34,7 @@ const Experiences = () => {
     {
       id: 4,
       period: "2021 - 2023",
-      title: "Développeur Full Stack",
+      title: "Développeur Full Stack web",
       company: "Regional Gymnastics Committee",
       location: "Rouen, France",
       description: "Création de sites web pour le Comité Régional de Gymnastique.",
