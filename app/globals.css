@@ -20,8 +20,12 @@
   width: calc(100% - 10px);
 }
 
+html, body {
+  cursor: none !important;
+}
+
+/* Valeur par défaut pour mobile */
 html {
-  /* Valeur par défaut pour mobile */
   scroll-padding-top: 80px;
 }
 
@@ -37,4 +41,8 @@ html {
   html {
     scroll-padding-top: 120px;
   }
+}
+
+*, a, button, input, textarea, [role="button"] {
+  cursor: none !important;
 }

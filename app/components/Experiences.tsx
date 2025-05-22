@@ -79,7 +79,6 @@ const Experiences = () => {
               <p className="text-lg font-medium mb-2">{experience.company}</p>
               <p className="text-gray-600 mb-4">{experience.location}</p>
               <p className="text-gray-600 mb-4">{experience.description}</p>
-              
               <div className="flex flex-wrap gap-2">
                 {experience.skills.map((skill) => (
                   <span 
