@@ -3,34 +3,70 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { useState, useRef, useEffect } from 'react';
+
+const projects = [
+  {
+    title: "Portfolio NextJS",
+    description: "Portfolio moderne développé avec Next.js 15, Tailwind CSS et Framer Motion. Inclut une expérience utilisateur fluide et un design responsive.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/code.jpg",
+    github: [
+      { url: "https://github.com/anthonyvouin/landingpage" }
+    ],
+    site: "https://anthony-vouin.com"
+  },
+  {
+    title: "Snap&Shop",
+    description: "C'est une plateforme de livraison de produits de consommation courante développée avec Next.js, PostgreSQL, Tailwind CSS et PrimeReact pour les composants. L'intégration de Stripe et de ses webhooks permet une gestion fluide des paiements. Une partie DevOps est également incluse pour le déploiement et l'automatisation. Ce projet, réalisé dans un cadre scolaire, intègre aussi de l'intelligence artificielle pour recommander des produits aux utilisateurs, améliorant ainsi l'expérience d'achat. Le design est responsive, moderne et agrémenté d'animations engageantes pour une navigation optimale.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PrimeReact", "Postgres"],
+    image: "/code.jpg",
+    github: [
+      { url: "https://github.com/anthonyvouin/MarketPlaceFood" },
+    ],
+  }, 
+  {
+    title: "Quiz app",
+    description: "Quiz application développée pour une freelancer Anna Girard, conçue pour sensibiliser aux bonnes pratiques de cybersécurité parmi ses clients. Interface interactive et engageante pour tester et améliorer les connaissances sur les bonnes pratiques de cybersécurité.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/code.jpg",
+    github: [
+      { url: "https://github.com/anthonyvouin/quiz"}
+    ],
+  },
+  {
+    title: "OnlyFlick",
+    description: "OnlyFlick est une plateforme d’abonnement permettant aux créateurs de partager du contenu exclusif autour des animaux. Développée avec Flutter pour l'application mobile et Golang pour le backend, elle s’appuie sur PostgreSQL pour la gestion des données. L’intégration de Stripe et de ses webhooks assure une gestion fiable des paiements récurrents. Le projet inclut également une infrastructure DevOps pour le déploiement automatisé. Le design est moderne, responsive et centré sur l’expérience utilisateur, avec des suggestions de contenus basées sur les préférences des abonnés.",
+    technologies: ["Flutter", "Golang", "PostgreSQL", "Stripe", "Docker"],
+    image: "/code.jpg",
+    github: [
+      { url: "https://github.com/anthonyvouin/pec2-frontend" , label: "Front - Mobile"},
+      { url: "https://github.com/anthonyvouin/pec2-backend/" , label: "Back - API"},
+    ],
+  }
+  
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Portfolio NextJS",
-      description: "Portfolio moderne développé avec Next.js 15, Tailwind CSS et Framer Motion. Inclut une expérience utilisateur fluide et un design responsive.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-      image: "/code.jpg",
-      github: "https://github.com/anthonyvouin/landingpage",
-      site: "https://anthony-vouin.com"
-    },
-    {
-      title: "Snap&Shop",
-      description: "C'est une plateforme de livraison de produits de consommation courante développée avec Next.js, PostgreSQL, Tailwind CSS et PrimeReact pour les composants. L'intégration de Stripe et de ses webhooks permet une gestion fluide des paiements. Une partie DevOps est également incluse pour le déploiement et l'automatisation. Ce projet, réalisé dans un cadre scolaire, intègre aussi de l'intelligence artificielle pour recommander des produits aux utilisateurs, améliorant ainsi l'expérience d'achat. Le design est responsive, moderne et agrémenté d'animations engageantes pour une navigation optimale.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PrimeReact", "Postgres"],
-      image: "/code.jpg",
-      github: "https://github.com/anthonyvouin/MarketPlaceFood",
-      site: ""
-    }, 
-    {
-        title: "Quiz app",
-        description: "Quiz application développée pour une freelancer Anna Girard, conçue pour sensibiliser aux bonnes pratiques de cybersécurité parmi ses clients. Interface interactive et engageante pour tester et améliorer les connaissances sur les bonnes pratiques de cybersécurité.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-      image: "/code.jpg",
-      github: "https://github.com/anthonyvouin/quiz",
-      site: ""
-    },
-  ];
+  const [expanded, setExpanded] = useState<number | null>(null);
+  const [clamped, setClamped] = useState<{ [key: number]: boolean }>({});
+  const descRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+
+  useEffect(() => {
+    const newClamped: { [key: number]: boolean } = {};
+    descRefs.current.forEach((el, idx) => {
+      if (el) {
+        const lineHeight = parseFloat(getComputedStyle(el).lineHeight) || 24;
+        const maxHeight = 3 * lineHeight;
+        newClamped[idx] = el.scrollHeight > maxHeight + 1;
+      }
+    });
+    setClamped(newClamped);
+  }, []);
+
+  const toggleExpand = (index: number) => {
+    setExpanded(expanded === index ? null : index);
+  };
 
   return (
     <section id="projects" className=" bg-white mt-20 mb-20">
@@ -70,7 +106,21 @@ const Projects = () => {
 
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p
+                  ref={el => { descRefs.current[index] = el; }}
+                  className={`text-gray-600 mb-4 ${expanded === index ? '' : 'line-clamp-3'}`}
+                >
+                  {project.description}
+                </p>
+                {clamped[index] && (
+                  <button
+                    onClick={() => toggleExpand(index)}
+                    className="text-gray-800 font-semibold text-sm mb-4 flex items-center gap-1 hover:underline focus:outline-none transition-colors"
+                  >
+                    {expanded === index ? 'Voir moins' : 'Voir plus'}
+                    <span className={`transition-transform duration-200 ${expanded === index ? 'rotate-180' : ''}`}>▼</span>
+                  </button>
+                )}
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, techIndex) => (
@@ -84,31 +134,32 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-black hover:text-gray-600 transition-colors"
-                  >
-                    <FaGithub className="text-xl" />
-                    <span>Code</span>
-                  </a>
-                  <a
-                    href={project.site}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-black hover:text-gray-600 transition-colors"
-                  >
-                    <FaExternalLinkAlt className="text-xl" />
-                    <span>Demo</span>
-                  </a>
+                  {project.github.map((repo, i) => (
+                    <a
+                      key={i}
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors duration-200"
+                    >
+                      <FaGithub className="text-xl" />
+                      <span className="font-medium">Code{'label' in repo && repo.label ? ` ${repo.label}` : ''}</span>
+                    </a>
+                  ))}
+                  {project.site && (
+                    <a
+                      href={project.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors duration-200"
+                    >
+                      <FaExternalLinkAlt className="text-lg" />
+                      <span className="font-medium">Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
-            
-
-
-
           ))}
         </div>
 
