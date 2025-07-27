@@ -26,13 +26,12 @@ const projects = [
     ],
   }, 
   {
-    title: "Quiz app",
+    title: "Good or Bad mail",
     description: "Quiz application développée pour une freelancer Anna Girard, conçue pour sensibiliser aux bonnes pratiques de cybersécurité parmi ses clients. Interface interactive et engageante pour tester et améliorer les connaissances sur les bonnes pratiques de cybersécurité.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     image: "/code.jpg",
-    github: [
-      { url: "https://github.com/anthonyvouin/quiz"}
-    ],
+    github: [],
+    site: "https://goodorbadmail.com"
   },
   {
     title: "OnlyFlick",
@@ -42,7 +41,17 @@ const projects = [
     github: [
       { url: "https://github.com/anthonyvouin/pec2-frontend" , label: "Front - Mobile"},
       { url: "https://github.com/anthonyvouin/pec2-backend/" , label: "Back - API"},
+      { url: "https://github.com/anthonyvouin/pec2-kube", label: "DevOps - Kube"}
     ],
+    site: ""
+  },
+  {
+    title: "Plizzi",
+    description: "Plizzi est une plateforme innovante d'avantages locaux qui connecte plus de 2000 utilisateurs actifs avec des commerces partenaires. Développée avec Next.js pour le frontend et Nest.js pour l'API, elle permet aux utilisateurs de découvrir et profiter de réductions exclusives autour d'eux. La plateforme intègre un système de géolocalisation, de récompenses par jetons, et propose différentes formules d'abonnement (Solo, Duo, Famille). L'interface est moderne et intuitive, optimisée pour une expérience utilisateur fluide tant sur mobile que sur desktop.",
+    technologies: ["Next.js", "Nest.js", "TypeScript", "PostgreSQL", "Stripe"],
+    image: "/code.jpg",  
+    github: [],
+    site: "https://www.plizzi.fr"
   }
   
 ];
